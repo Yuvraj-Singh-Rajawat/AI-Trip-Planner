@@ -21,6 +21,14 @@ app.use(cors(corsOptions));
 
 const GOOGLE_API_KEY = process.env.VITE_GOOGLE_PLACE_API_KEY;
 
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval';"
+  );
+  next();
+});
+
 // Proxy route for Google Places Text Search API
 app.post("/api/v1/places:searchText", async (req, res) => {
   const { textQuery } = req.body;
