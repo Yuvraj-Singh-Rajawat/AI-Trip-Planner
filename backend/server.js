@@ -9,9 +9,17 @@ dotenv.config();
 const app = express();
 const PORT = 5000;
 
+const corsOptions = {
+  origin: "http://localhost:5173", // Frontend domain
+  methods: ["POST", "GET"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
 // Middleware to handle JSON requests and enable CORS
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
+
+const GOOGLE_API_KEY = process.env.VITE_GOOGLE_PLACE_API_KEY;
 
 // Proxy route for Google Places Text Search API
 app.post("/api/v1/places:searchText", async (req, res) => {
@@ -23,9 +31,8 @@ app.post("/api/v1/places:searchText", async (req, res) => {
 
   const GOOGLE_PLACES_API_URL =
     "https://places.googleapis.com/v1/places:searchText";
-  const GOOGLE_API_KEY = process.env.VITE_GOOGLE_PLACE_API_KEY; // Use the updated variable name
 
-  console.log("Google API Key:", process.env.VITE_GOOGLE_PLACE_API_KEY); // Debug log
+  console.log("Google API Key:", GOOGLE_API_KEY); // Debug log
 
   try {
     const response = await axios.post(
@@ -36,7 +43,7 @@ app.post("/api/v1/places:searchText", async (req, res) => {
       {
         headers: {
           "Content-Type": "application/json",
-          "X-Goog-Api-Key": process.env.VITE_GOOGLE_PLACE_API_KEY,
+          "X-Goog-Api-Key": GOOGLE_API_KEY,
           "X-Goog-FieldMask": "places.displayName,places.photos", // Customize FieldMask for your use case
         },
       }

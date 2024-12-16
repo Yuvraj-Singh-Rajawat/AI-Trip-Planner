@@ -6,6 +6,7 @@ const BASE_URL =
 const config = {
   headers: {
     "Content-Type": "application/json",
+    Authorization: `Bearer ${import.meta.env.VITE_GOOGLE_PLACE_API_KEY}`, // If required
   },
 };
 
