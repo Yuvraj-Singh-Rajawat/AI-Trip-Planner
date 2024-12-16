@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/api/v1/places:searchText";
+const BASE_URL =
+  "https://ai-trip-planner-backend.vercel.app/api/v1/places:searchText";
 
 const config = {
   headers: {
