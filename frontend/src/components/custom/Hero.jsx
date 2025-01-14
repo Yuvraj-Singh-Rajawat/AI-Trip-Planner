@@ -17,7 +17,7 @@ const Hero = () => {
         itineraries tailored to your interests and budget.
       </p>
 
-      <Link to="/create-trip">
+      <Link to="/create-trip" className="z-10">
         <Button>Get Started, It's Free</Button>
       </Link>
 
