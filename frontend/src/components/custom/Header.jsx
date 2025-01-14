@@ -15,6 +15,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { FcGoogle } from "react-icons/fc";
+import { FaRegUserCircle } from "react-icons/fa";
+import { PiUserCircleLight } from "react-icons/pi";
 import axios from "axios";
 
 const Header = () => {
@@ -60,12 +62,12 @@ const Header = () => {
   };
 
   return (
-    <div className="p-3 shadow-md flex justify-between items-center px-5">
+    <div className="p-3 shadow-md flex justify-between items-center px-5 w-full fixed backdrop-blur-md top-0 left-0">
       <a href="/">
-        <img src="/logo.svg" alt="" />
+        <img src="/image-removebg-preview.png" alt="" className="h-10" />
       </a>
 
-      <div>
+      <div className="">
         {user ? (
           <div className="flex items-center gap-3">
             <a href="/create-trip">
@@ -81,11 +83,7 @@ const Header = () => {
 
             <Popover>
               <PopoverTrigger>
-                <img
-                  src={user?.picture}
-                  className="h-[35px] w-[35px] rounded-full"
-                  alt=""
-                />
+                <PiUserCircleLight className="w-10 h-10 rounded-full" />
               </PopoverTrigger>
               <PopoverContent>
                 <a href="/">

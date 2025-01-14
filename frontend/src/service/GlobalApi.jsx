@@ -1,12 +1,11 @@
 import axios from "axios";
 
-const BASE_URL =
-  "https://ai-trip-planner-backend.vercel.app/api/v1/places:searchText";
+const BASE_URL = "https://ai-trip-planner-p2cs.onrender.com/api/v1/places:searchText";
 
 const config = {
   headers: {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${import.meta.env.VITE_GOOGLE_PLACE_API_KEY}`, // If required
+    Authorization: `Bearer ${import.meta.env.VITE_GOOGLE_PLACE_API_KEY}`,
   },
 };
 

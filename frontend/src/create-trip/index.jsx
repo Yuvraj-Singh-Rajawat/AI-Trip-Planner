@@ -161,7 +161,7 @@ const CreateTrip = () => {
   };
 
   return (
-    <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10">
+    <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-24">
       <h2 className="font-bold text-3xl">
         Tell us your travel preferences 🏕️🌴
       </h2>
@@ -231,7 +231,8 @@ const CreateTrip = () => {
               <div
                 key={index}
                 className={`p-4 border rounded-lg hover:shadow-lg cursor-pointer ${
-                  formData?.traveller === item.people && "shadow-lg border-black"
+                  formData?.traveller === item.people &&
+                  "shadow-lg border-black"
                 }`}
                 onClick={() => handleInputChange("traveller", item.people)}
               >

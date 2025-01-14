@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div className="flex items-center mx-56 gap-9 flex-col">
-      <h1 className="font-extrabold text-[50px] text-center mt-16">
+      <h1 className="font-extrabold text-[50px] text-center mt-24">
         <span className="text-[#f56551]">
           Discover Your Next Adventure with AI:
         </span>
@@ -21,7 +21,7 @@ const Hero = () => {
         <Button>Get Started, It's Free</Button>
       </Link>
 
-      <img src="/landing.png" className="mt-20" alt="" />
+      <img src="/landing.png" className="mt-[-120px]" alt="" />
     </div>
   );
 };

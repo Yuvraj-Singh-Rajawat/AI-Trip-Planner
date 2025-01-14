@@ -10,7 +10,7 @@ const app = express();
 const PORT = 5000;
 
 const corsOptions = {
-  origin: "https://trip-ai-uv.vercel.app", // Frontend domain
+  origin: "https://ai-trip-planner-taupe-eight.vercel.app", // Frontend domain
   methods: ["POST", "GET"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
